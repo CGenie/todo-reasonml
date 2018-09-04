@@ -1,5 +1,11 @@
 # `todo-reasonml`
 
+[TodoMVC](http://todomvc.com/) is a nice project for comparing JavaScript frameworks. However, I find it too simple -- it doesn't cover more advanced requirements which are put on the developer in the real world.
+
+One of good tests turns out to be an app with dynamically rendered lists, where you can drag elements between the lists (so a mult-list TodoMVC).
+
+Turns out in this setting the frameworks don't become that easy anymore. One example is AngularJS 1.x. Just read [this thread](https://github.com/angular/angular.js/pull/4786).
+
 ## Run Project
 
 ```sh
