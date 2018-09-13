@@ -83,15 +83,24 @@ let make = (~it, _children) => {
       | Todo => "TODO"
       | Done => "DONE"
       };
+
+    let doneIcon = (item) =>
+      switch(item.item_state) {
+      | Todo => <span />
+      | Done => (
+          <span className="icon is-small is-right">
+            <i className="fas fa-check has-text-success"></i>
+          </span>
+      )
+      };
+
     <div className="columns"
-        ref={self.handle(setItemRef)}>
+         ref={self.handle(setItemRef)}>
       <div className="control column has-icons-right">
         <div className="button is-fullwidth"
             onClick=(_event => self.send(ToggleState))>
         <span className="name is-left">(ReasonReact.string(self.state.item.name))</span>
-        <span className="icon is-small is-right">
-          <i className="fas fa-check has-text-success"></i>
-        </span>
+        (doneIcon(self.state.item))
       </div>
     </div>
     <div className="column is-one-fifth state"

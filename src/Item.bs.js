@@ -64,6 +64,18 @@ function make(it, _) {
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (self) {
+              var doneIcon = function (item) {
+                var match = item[/* item_state */2];
+                if (match) {
+                  return React.createElement("span", {
+                              className: "icon is-small is-right"
+                            }, React.createElement("i", {
+                                  className: "fas fa-check has-text-success"
+                                }));
+                } else {
+                  return React.createElement("span", undefined);
+                }
+              };
               return React.createElement("div", {
                           ref: Curry._1(self[/* handle */0], setItemRef),
                           className: "columns"
@@ -76,11 +88,7 @@ function make(it, _) {
                                     })
                                 }, React.createElement("span", {
                                       className: "name is-left"
-                                    }, self[/* state */1][/* item */0][/* name */1]), React.createElement("span", {
-                                      className: "icon is-small is-right"
-                                    }, React.createElement("i", {
-                                          className: "fas fa-check has-text-success"
-                                        })))), React.createElement("div", {
+                                    }, self[/* state */1][/* item */0][/* name */1]), doneIcon(self[/* state */1][/* item */0]))), React.createElement("div", {
                               className: "column is-one-fifth state",
                               onClick: (function () {
                                   return Curry._1(self[/* send */3], /* ToggleState */0);
